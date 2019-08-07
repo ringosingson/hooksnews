@@ -25,7 +25,7 @@ function Header() {
       </div>
       <div className='flex'>
         <NavLink to='/login' className='header-link'>
-          login
+          Login
         </NavLink>
       </div>
     </div>
