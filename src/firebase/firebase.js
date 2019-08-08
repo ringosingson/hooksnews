@@ -1,7 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from './config';
-import ForgotPassword from './../components/Auth/ForgotPassword';
+//import ForgotPassword from './../components/Auth/ForgotPassword';
 
 class Firebase {
   constructor() {
