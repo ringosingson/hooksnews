@@ -37,17 +37,19 @@ function LinkItem({ link, index, showCount, history }) {
   const postedByAuthUser = user && user.uid === link.postedBy.id;
 
   return (
-    <div className='flex'>
-      <div className='flex'>
+    <div className='flex items-start mt4'>
+      <div className='flex items-center'>
         {showCount && <span className='gray'>{index}.</span>}
         <button className='vote-button' onClick={handleVote}>
           <span role='img' aria-label='emoji'>
-            🔺
+            🔼
           </span>
         </button>
-        <div className='ml1'>
+        <div className='ml5'>
           <div>
-            {link.description}{' '}
+            <a href={link.url} className='black no-underline'>
+              {link.description}
+            </a>{' '}
             <span className='link'>({getDomain(link.url)})</span>
           </div>
           <div className='f6 lh-copy gray'>

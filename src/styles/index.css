@@ -179,3 +179,26 @@ textarea {
 .mt7 {
   margin-top: 0.7em;
 }
+
+.ml5 {
+  margin-left: 0.5em;
+}
+
+.black {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  justify-items: flex-start;
+}
+
+.mt4 {
+  margin-top: 0.4em;
+}
