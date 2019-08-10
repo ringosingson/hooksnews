@@ -11,6 +11,9 @@ function Header() {
         <NavLink to='/' className='header-title'>
           Hooks News
         </NavLink>
+        <NavLink to='/' className='header-link'>
+          new
+        </NavLink>
 
         <div className='divider'>|</div>
         <NavLink to='/top' className='header-link'>
