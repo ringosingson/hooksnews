@@ -31,6 +31,10 @@ input {
   width: 85%;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .button {
   font-family: monospace;
   font-size: 10pt;
@@ -201,4 +205,12 @@ textarea {
 
 .mt4 {
   margin-top: 0.4em;
+}
+
+.mr2 {
+  margin-right: 0.2em;
+}
+
+.ml2 {
+  margin-left: 0.2em;
 }
