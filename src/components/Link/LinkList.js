@@ -8,6 +8,7 @@ function LinkList(props) {
   const { firebase } = React.useContext(FirebaseContext);
   const [links, setLinks] = React.useState([]);
   const [cursor, setCursor] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
   const isNewPage = props.location.pathname.includes('new');
   const isTopPage = props.location.pathname.includes('top');
   const page = Number(props.match.params.page);
@@ -15,6 +16,7 @@ function LinkList(props) {
   React.useEffect(() => {
     function getLinks() {
       const hasCursor = Boolean(cursor);
+      setLoading(true);
       if (isTopPage) {
         return firebase.db
           .collection('links')
@@ -46,6 +48,7 @@ function LinkList(props) {
             const lastLink = links[links.length - 1];
             setLinks(links);
             setCursor(lastLink);
+            setLoading(false);
           });
         return () => {};
       }
@@ -64,6 +67,7 @@ function LinkList(props) {
     const lastLink = links[links.length - 1];
     setLinks(links);
     setCursor(lastLink);
+    setLoading(false);
   }
 
   function visitPreviousPage() {
@@ -81,7 +85,7 @@ function LinkList(props) {
   const pageIndex = page ? (page - 1) * LINKS_PER_PAGE + 1 : 0;
 
   return (
-    <div>
+    <div style={{ opacity: loading ? 0.25 : 1 }}>
       {links.map((link, index) => (
         <LinkItem
           key={link.id}
