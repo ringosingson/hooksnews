@@ -5,7 +5,7 @@ import { FirebaseContext } from '../firebase';
 function Header() {
   const { user, firebase } = React.useContext(FirebaseContext);
   return (
-    <div className='header'>
+    <div className='header' style={{ flexWrap: 'wrap' }}>
       <div className='flex'>
         <img src='/logo.png' alt='HooksNews Logo' className='logo' />
         <NavLink to='/' className='header-title'>
@@ -31,21 +31,21 @@ function Header() {
             </NavLink>
           </>
         )}
-        <div className='flex'>
-          {user ? (
-            <>
-              <div className='header-name'>{user.displayName}</div>
-              <div className='divider'>|</div>
-              <div className='header-button' onClick={() => firebase.logout()}>
-                logout
-              </div>
-            </>
-          ) : (
-            <NavLink to='/login' className='header-link'>
-              Login
-            </NavLink>
-          )}
-        </div>
+      </div>
+      <div className='flex'>
+        {user ? (
+          <>
+            <div className='header-name'>{user.displayName}</div>
+            <div className='divider'>|</div>
+            <div className='header-button' onClick={() => firebase.logout()}>
+              logout
+            </div>
+          </>
+        ) : (
+          <NavLink to='/login' className='header-link'>
+            Login
+          </NavLink>
+        )}
       </div>
     </div>
   );
