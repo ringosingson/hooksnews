@@ -31,21 +31,21 @@ function Header() {
             </NavLink>
           </>
         )}
-      </div>
-      <div className='flex'>
-        {user ? (
-          <>
-            <div className='header-name'>{user.displayName}</div>
-            <div className='divider'>|</div>
-            <div className='header-button' onClick={() => firebase.logout()}>
-              logout
-            </div>
-          </>
-        ) : (
-          <NavLink to='/login' className='header-link'>
-            Login
-          </NavLink>
-        )}
+        <div className='flex'>
+          {user ? (
+            <>
+              <div className='header-name'>{user.displayName}</div>
+              <div className='divider'>|</div>
+              <div className='header-button' onClick={() => firebase.logout()}>
+                logout
+              </div>
+            </>
+          ) : (
+            <NavLink to='/login' className='header-link'>
+              Login
+            </NavLink>
+          )}
+        </div>
       </div>
     </div>
   );
